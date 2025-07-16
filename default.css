@@ -1,0 +1,127 @@
+/*
+Changelog:
+
+3/13/23
+removed unused stuff, cleaned up, added comments
+
+3/14/23
+footer now goes to bottom, added tiled background
+
+7/15/25
+dusted this off, made it less gaudy and more pleasant to look at and read
+the footer ACTUALLY goes to the bottom now, smh
+*/
+
+/*link colors*/
+a:link {
+	color: lightblue;
+}
+
+a:visited {
+	color: lightgray;
+}
+
+a:hover {
+	color: #4b50ee;
+}
+
+a:active {
+	color: white;
+}
+
+/*main background*/
+
+body {
+	background-color: #051C04;
+	min-height: 100%; /*this needs to be here so the footer goes to the bottom of page*/
+}
+
+/*header/footer (and related) element styles*/
+
+header {
+	background-color:#163916;
+	border: 5px solid #163916;
+}
+
+/*if there isn't an hr under the header it gets broke'd,
+so we add one in the markup and style it so it's invisible -sl*/
+header > hr {
+	height: 0px;
+	width: 100%;
+	color:#163916;
+	border-color:#163916;
+	visibility: hidden;
+}
+
+/* don't feel like taking the hr out of the footer so we'll just hide it -sl*/
+footer > hr {
+	height: 0px;
+	width: 100%;
+	color:#163916;
+	border-color:#163916;
+	visibility: hidden;
+}
+
+section {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+hr { /*horizontal rule*/
+	color: #2f612f;
+	background-color: green;
+	height: 3px;
+	width: 100%;
+}
+
+/*ACTUALLY drops footer to bottom of screen now*/
+footer {
+	border: 5px solid #163916;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-top: 200px;
+	background-color:#163916;
+}
+
+/*header and footer images*/
+
+.headericon {
+	border: 2px solid green;
+	height: 4%;
+	width: 4%;
+}
+
+/*used in divs to center stuff*/
+.center {
+	text-align: center;
+}
+
+/*defines fonts for typical text container things*/
+
+p, h1, h2, h3, h4, h5, h6, details, figcaption {
+	font-family: "Verdana", "Arial", "Helvetica", sans-serif;
+	color: white;
+}
+
+ul, li{
+	font-family: "Verdana", "Arial", "Helvetica", sans-serif;
+	color: white;
+	list-style-position: inside; /*why did i put this here? - sl */
+}
+
+/*tables*/
+
+table {
+	font-family: "Verdana", "Arial", "Helvetica", sans-serif; /*set up fonts for text*/
+	color: white;
+}
+
+.centertable { /*class for centering tables*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* END OF FILE */
