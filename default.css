@@ -30,14 +30,12 @@ a:active {
 }
 
 /*main background*/
-
 body {
 	background-image: url(img/headerbg.png);
 	min-height: 100%; /*this needs to be here so the footer goes to the bottom of page*/
 }
 
 /*header/footer (and related) element styles*/
-
 header {
 	margin-left: 160px; /* Same as the width of the sidebar */
 	padding: 0px 10px;
