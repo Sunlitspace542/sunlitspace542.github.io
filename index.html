@@ -17,20 +17,10 @@ Filename: index.html
 <body>
 
 	<!-- Side navigation -->
-	<!-- <div class="sidenav">
+	<div class="sidenav">
 		<a href="index.html"><img src="img/homeicon.png" class="sidenavicon"> Home</a>
 		<a href="https://sunlitspace542.carrd.co"><img src="img/linksicon.png" class="sidenavicon"> Links</a>
-	</div> -->
-
-	<div id="sitenavbar"></div>
-
-	<script>
-		fetch("http://sunlitspace542.github.io/navbar.html")
-		.then(response => response.text())
-		.then(data => {
-			document.getElementById("sitenavbar").innerHTML = data;
-		});
-	</script>
+	</div>
 
 	<div class="siteheader">
 		<h3><img src="img/sun_moni.png" alt="site icon" class="headericon" style="position: relative; top: 20px;"> Sunlit's Place</h3>
