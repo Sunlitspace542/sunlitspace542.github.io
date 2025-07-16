@@ -14,7 +14,114 @@ the footer ACTUALLY goes to the bottom now, smh
 7/16/25
 whole lotta changes
 basically the whole website looks different now
+cleaned up redundant things, ordered as it is in the html
 */
+
+/*main background*/
+body {
+	background-image: url(img/bg.png);
+	min-height: 100%; /*this needs to be here so the footer goes to the bottom of page*/
+	color: white;
+	text-shadow: #000 1px 1px;
+	font-family: "Verdana", "Arial", "Helvetica", sans-serif;
+}
+
+/*background tint*/
+.bgoverlay {
+	background-color: #041a04cb;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+}
+
+/*header/footer (and related) element styles*/
+header {
+	text-align: center;
+	font-size: 150%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*header icon style*/
+.headericon {
+	width: 60px;
+	position: relative;
+}
+
+/*navbar and main content container*/
+.thepage {
+	margin: 0 auto;
+	width: auto;
+	max-width: 1300px;
+}
+
+/*Fancy text box*/
+.main-content {
+	display: block;
+	background-color: #051C04e0;
+	margin-left: 230px;
+	margin-right: 0;
+	margin-top: 0;
+	padding: 25px;
+	border-top: 3px green solid;
+	border-bottom: 3px green solid;
+	line-height: 1.5em;
+	width: auto;
+}
+
+/*side navigation*/
+.sidenav {
+	float: left;
+	width: 218px;
+	background: #051C04e0;
+	border-top: 3px solid green;
+	border-bottom: 3px solid green;
+	padding-bottom: 8px;
+}
+
+.sidenav div {
+	background: green;
+	text-align: center;
+	margin: 2px;
+	line-height: 18px;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*sidenav links*/
+.sidenav a {
+	display: block;
+	margin: 0;
+	padding: 1px 5px;
+	font-weight: bolder;
+	text-decoration: none;
+	line-height: 1em;
+	color: lightblue;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+	color: white;
+}
+
+/*navbar icon style*/
+.sidenavicon {
+	vertical-align: text-bottom;
+	image-rendering: pixelated;
+}
+
+/*ACTUALLY drops footer to bottom of screen now*/
+footer {
+	clear: both;
+}
+
+/*used in divs to center stuff*/
+.center {
+	text-align: center;
+}
 
 /*link colors*/
 a:link {
@@ -33,33 +140,6 @@ a:active {
 	color: white;
 }
 
-/*main background*/
-body {
-	background-image: url(img/bg.png);
-	min-height: 100%; /*this needs to be here so the footer goes to the bottom of page*/
-	text-shadow: #000 1px 1px;
-	font-family: "Verdana", "Arial", "Helvetica", sans-serif;
-}
-
-.layer {
-	background-color: #041a04cb;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	min-height: 100%;
-}
-
-/*header/footer (and related) element styles*/
-header {
-	text-align: center;
-}
-
-section {
-	margin-top: auto;
-	margin-bottom: auto;
-}
-
 hr { /*horizontal rule*/
 	color: #2f612f;
 	background-color: green;
@@ -67,61 +147,10 @@ hr { /*horizontal rule*/
 	width: 100%;
 }
 
-/*ACTUALLY drops footer to bottom of screen now*/
-footer {
-	clear: both;
-}
-
-/*Fancy text box*/
-.main-content {
-	display: block;
-	background-color: #051C04e0;
-	margin-left: 230px;
-	margin-right: 230px;
-	margin-bottom: 10px;
-	padding: 25px;
-	border-top: 3px green solid;
-	border-bottom: 3px green solid;
-	border-radius: 15px;
-	line-height: 1.5em;
-	width: auto;
-}
-
-/*header icon style*/
-.headericon {
-	border: 2px solid green;
-	height: 3%;
-	width: 3%;
-}
-
-/*navbar icon style*/
-.sidenavicon {
-	vertical-align: text-bottom;
-	width: 20%;
-}
-
-/*used in divs to center stuff*/
-.center {
-	text-align: center;
-}
-
-/*defines fonts for typical text container things*/
-
-p, h1, h2, h3, h4, h5, h6, details, figcaption {
-	color: white;
-}
-
-ul, li{
-	color: white;
-	list-style-position: inside; /*why did i put this here? -sl */
-}
-
 /*tables*/
-
 table, th, td {
 	border: 1px solid green;
 	border-collapse: collapse;
-	color: white;
 }
 
 th, td {
@@ -133,58 +162,5 @@ th, td {
 	margin-left: auto;
 	margin-right: auto;
 }
-
-/* The sidebar menu */
-.sidenav {
-	width: 200px; /* Set the width of the sidebar */
-	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-	z-index: 1; /* Stay on top */
-	top: 10px; /* Stay at the top */
-	bottom: 10px;
-	left: 0;
-	background-color: #051C04e0;
-	overflow-x: hidden; /* Disable horizontal scroll */
-	padding-top: 20px;
-	border-top: 3px solid green;
-	border-bottom: 3px solid green;
-	border-radius: 15px;
-}
-
-.sidenav div {
-	background: green;
-	text-align: center;
-	margin: 2px;
-	line-height: 18px;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-}
-
-/* The navigation menu links */
-.sidenav a {
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	font-size: 1em;
-	font-weight: bolder;
-	color: lightblue;
-	display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-	color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-	margin-left: 200px; /* Same as the width of the sidebar */
-	margin-right: 200px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
-} 
 
 /* END OF FILE */
