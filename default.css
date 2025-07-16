@@ -82,6 +82,15 @@ header {
 	margin-bottom: 10px;
 }
 
+/*for embedding images in main-content*/
+.scroll-container-nobg {
+	overflow: auto;
+	white-space: nowrap;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+
 /*side navigation*/
 .sidenav {
 	float: left;
