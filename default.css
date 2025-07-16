@@ -10,6 +10,10 @@ footer now goes to bottom, added tiled background
 7/15/25
 dusted this off, made it less gaudy and more pleasant to look at and read
 the footer ACTUALLY goes to the bottom now, smh
+
+7/16/25
+whole lotta changes
+basically the whole website looks different now
 */
 
 /*link colors*/
@@ -43,13 +47,12 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 
 /*header/footer (and related) element styles*/
 header {
 	text-align: center;
-	padding-top: 10px;
 }
 
 section {
@@ -67,11 +70,6 @@ hr { /*horizontal rule*/
 /*ACTUALLY drops footer to bottom of screen now*/
 footer {
 	clear: both;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding-bottom: 10px;
 }
 
 /*Fancy text box*/
@@ -80,6 +78,7 @@ footer {
 	background-color: #051C04e0;
 	margin-left: 230px;
 	margin-right: 230px;
+	margin-bottom: 10px;
 	padding: 25px;
 	border-top: 3px green solid;
 	border-bottom: 3px green solid;
@@ -178,8 +177,8 @@ th, td {
 
 /* Style page content */
 .main {
-	margin-left: 160px; /* Same as the width of the sidebar */
-	padding: 0px 10px;
+	margin-left: 200px; /* Same as the width of the sidebar */
+	margin-right: 200px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
