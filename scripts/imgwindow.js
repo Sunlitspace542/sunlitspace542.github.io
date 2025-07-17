@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const images = Array.from(document.querySelectorAll("img.select-hover"));
-  const showNav = images.length > 1;
+  let images = []; // Will be dynamic per scroll container
   let currentIndex = 0;
 
   // Create popup container
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     z-index: 9999;
   `;
 
-  // Create content box
   const contentBox = document.createElement("div");
   contentBox.style.cssText = `
     background: #051C04e0;
@@ -39,34 +37,27 @@ document.addEventListener("DOMContentLoaded", function () {
     margin: 20px 0;
     border-radius: 8px;
   `;
+
   const description = document.createElement("p");
 
-  // Navigation Buttons
-  const navWrapper = document.createElement("div");
-  navWrapper.style.cssText = "display: flex; justify-content: space-between; margin-top: 10px;";
+  // Navigation + Close Buttons
+  const buttonBar = document.createElement("div");
+  buttonBar.style.cssText = `
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  `;
 
   const prevBtn = document.createElement("button");
-  prevBtn.textContent = "← Previous";
   const nextBtn = document.createElement("button");
-  nextBtn.textContent = "Next →";
   const closeBtn = document.createElement("button");
+
+  prevBtn.textContent = "← Previous";
+  nextBtn.textContent = "Next →";
   closeBtn.textContent = "Close";
 
-  if (!showNav) {
-  [closeBtn].forEach(btn => {
-    btn.style.cssText = `
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 8px 16px;
-    background: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  `;
-  });
- }else{
   [prevBtn, nextBtn, closeBtn].forEach(btn => {
     btn.style.cssText = `
       padding: 8px 16px;
@@ -77,7 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
       cursor: pointer;
     `;
   });
-  }
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
 
   prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -89,28 +83,16 @@ document.addEventListener("DOMContentLoaded", function () {
     showImage(currentIndex);
   });
 
-  if (showNav) {
-  navWrapper.appendChild(prevBtn);
-}
-  navWrapper.appendChild(closeBtn);
-  if (showNav) {
-  navWrapper.appendChild(nextBtn);
-}
-
-
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-
   contentBox.appendChild(altText);
   contentBox.appendChild(popupImg);
   contentBox.appendChild(description);
-  contentBox.appendChild(navWrapper);
+  contentBox.appendChild(buttonBar);
   popup.appendChild(contentBox);
   document.body.appendChild(popup);
 
   function showImage(index) {
     const img = images[index];
+    if (!img) return;
     altText.textContent = img.alt || "No alt text";
     popupImg.src = img.src;
     popupImg.alt = img.alt || "";
@@ -118,10 +100,29 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.style.display = "flex";
   }
 
-  images.forEach((img, index) => {
+  // Attach click handlers
+  document.querySelectorAll("img.select-hover").forEach((img) => {
     img.addEventListener("click", () => {
-      currentIndex = index;
+      // Find closest scroll container
+      const container = img.closest(".scroll-container, .scroll-container-nobg");
+      if (container) {
+        images = Array.from(container.querySelectorAll("img.select-hover"));
+      } else {
+        images = [img]; // No container = only this image
+      }
+
+      currentIndex = images.indexOf(img);
       showImage(currentIndex);
+
+      // Update button bar
+      buttonBar.innerHTML = ""; // Clear existing buttons
+      if (images.length > 1) {
+        buttonBar.appendChild(prevBtn);
+      }
+      buttonBar.appendChild(closeBtn);
+      if (images.length > 1) {
+        buttonBar.appendChild(nextBtn);
+      }
     });
   });
 });
