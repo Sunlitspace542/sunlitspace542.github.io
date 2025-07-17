@@ -145,6 +145,13 @@ footer {
 }
 
 /*Tooltips*/
+/*
+To use:
+<div class="tooltip">Text you want tooltip on
+	<span class="tooltiptext">Tooltip text</span>
+</div> 
+use span instead of div on the outside for non-breaking text.
+*/
 .tooltip {
 	position: relative;
 	display: inline-block;
