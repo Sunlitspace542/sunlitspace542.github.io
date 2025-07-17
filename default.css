@@ -132,6 +132,7 @@ header {
 .sidenavicon {
 	vertical-align: text-bottom;
 	image-rendering: pixelated;
+	width: 32px; /*2x width of the icons (16px)*/
 }
 
 /*ACTUALLY drops footer to bottom of screen now*/
