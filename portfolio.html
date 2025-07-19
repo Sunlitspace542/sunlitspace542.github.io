@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<!--
+Sunlit's Place Mk. III
+Date:	7/19/2025
+Filename: portfolio.html
+-->
+
+<head>
+	<title>Portfolio - Sunlit's Place</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!-- give this a random number every time you change the css! it makes it reload properly when pushed!! -->
+	<link rel="stylesheet" type="text/css" href="default.css?v=9234696529745696245974602364">
+	<meta name="darkreader-lock">
+</head>
+
+<body>
+	<!-- Background Overlay -->
+	<div class="bgoverlay">
+		<!-- Header -->
+		<header>
+			<img src="img/header/sun_moni.png" alt="site icon" class="headericon"> Sunlit's Place
+			<br>
+		</header>
+		<!-- Main Content -->
+		<div class="thepage">
+			<!-- Side Navigation -->
+			<div class="sidenav">
+				<a href="index.html"><img src="img/sidenav/homeicon.png" class="sidenavicon"> Home</a>
+				<a href="links.html"><img src="img/sidenav/linksicon.png" class="sidenavicon"> Links</a>
+				<div>Works</div>
+				<a href="romhacks.html"><img src="img/sidenav/n64carticon.png" class="sidenavicon"> ROMHacks</a>
+				<a href="portfolio.html"><img src="img/sidenav/portfolioicon.png" class="sidenavicon"> Portfolio</a>
+				<div>Art</div>
+				<a href="artwork.html"><img src="img/sidenav/artworkicon.png" class="sidenavicon"> Artwork</a>
+				<div>Donate</div>
+				<a href="https://www.patreon.com/c/SunlitSpace542"><img src="img/sidenav/patreonicon.png" class="sidenavicon"> Patreon</a>
+			</div>
+			<!-- Page Text -->
+			<div class="main-content">
+				<h1><u>Portfolio</u></h1>
+				
+				<p>
+					This page lists all my work on non-ROMhacking projects over the years.<br>
+					This page mostly consists of all the tools and other such utility programs I have made for use in my ROMhacking work.<br>
+					<br>
+					Disclosure:<br>
+					I often use AI tools to write smaller single purpose tools and/or the basic scaffolding for them, 
+					and I then take that and clean it up and make it actually work.<br>
+					Much of my work on these tools usually goes into figuring out the data formats and/or tying them all together 
+					if they are to be used as script components.<br>
+					<br>
+				</p>
+				
+				<!-- <div class="linklist">
+					<details><summary>Page Contents:</summary>
+						<ul>
+							<li>
+								<a href="#majorhacks">Major Hacks</a>
+							</li>
+							<li>
+								<a href="#minihacks">Minihacks</a>
+							</li>
+							<li>
+								<a href="#smallpatches">Small Patches</a>
+							</li>
+							<li>
+								<a href="#romhackingbases">ROMHacking Bases</a>
+							</li>
+						</ul>
+					</details>
+				</div> -->
+				
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/FastFX">FastFX</a></h2>
+						<p>
+							A Blender plugin for importing/exporting and editing shapes (models) for use in Star Fox 1 and 2.<br>
+							<br>
+							This tool was intended to act as my own replacement for Euclidium98's Model to FX, which I felt was very clunky and had room for improvement. 
+							I ended up with something that saves quite a bit of time in the modelling process, and it is now being actively used in Star Fox CD and Star Fox EX.<br>
+							It's still not completely independent, as for most uses it still depends on Argonaut Software's own SHAPED model editor/converter tool to 
+							prepare the exported data for use in game.<br>
+							<br>
+							I spent several weeks reverse engineering the various formats it now supports:<br>
+							<ul>
+								<li>
+									ASM BSP - text format used in Star Fox 1/2 to define shapes, FastFX can export to this format, though it does not support animation export or generating BSP trees for face sorting.
+								</li>
+								<li>
+									ASM GZS - similar to above, but face sorting is much worse and BSP trees are not used. Animation export for this format is not supported.
+								</li>
+								<li>
+									Fundoshi-Kun - Slightly modified version of the <a href="https://paulbourke.net/dataformats/geo/">Videoscape 3DG1 (GEO)</a> format.
+								</li>
+								<li>
+									Animated Fundoshi-Kun (3DAN/3DGI) - Similar to regular Fundoshi-Kun, but animated - works, but the user may need to reorder the BSP frame jump table after converting with SHAPED
+								</li>
+							</ul>
+							Work I did for this tool:
+							<ul>
+								<li>
+									Reverse engineering - staring at data long enough until I figured most of it out
+								</li>
+								<li>
+									Programming - ChatGPT wrote the basic outline, I took that and modified it to make it actually work, I also made Euclidium's Super FX material work as Python code
+								</li>
+							</ul>
+						</p>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/65816-superfx-asm-argonaut-vscode">Argonaut 65816/Super FX Language Support for VS Code</a></h2>
+						<p>
+							A Visual Studio Code extension that adds 65816 and Super FX assembly (Argonaut Syntax) support, with additional 
+							support for the directives used in Argonaut Software's SASM and ArgSfx assembler family.<br>
+							It also adds tooltips for Super FX instructions that describe the instruction and provides detailed information on usage and flags affected/cycles, 
+							based on a BRIEF editor macro Argonaut originally used during the development of Star Fox 1/2.<br>
+							<br>
+							Work I did for this tool:
+							<ul>
+								<li>
+									Programming - writing TMLanguage files for syntax highlighting
+								</li>
+								<li>
+									Documentation - filling in missing Super FX instruction information
+								</li>
+							</ul>
+						</p>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/ultrastarfox/tree/main/TOOLS/bgconv">bgconv/Star Fox Background Maker 9000</a> </h2>
+						<p>
+							A set of scripts that calls on a combination of other tools to convert 512x512 PNGs into Star Fox compatible CGX/SCR/COL data for use in game.
+						</p>
+						Work I did for this tool:
+						<ul>
+							<li>
+								Scripting - Writing the batch to tie everything together
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/ultrastarfox/tree/main/TOOLS/bgconv">bgoptimize/Star Fox Background Optimizer 9000</a> </h2>
+						<p>
+							A set of scripts that calls on a combination of other tools to convert a 512x512 PNG with its .PAL format palette 
+							into an optimized CGX tileset and SCR tilemap.<br>
+							Originally made for use with the original Star Fox graphics assets and otherwise handmade graphics assets to 
+							optimize them so they crunch (compress) to a smaller size to save space.<br>
+						</p>
+						Work I did for this tool:
+						<ul>
+							<li>
+								Scripting - Writing the batch to tie everything together
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/ultrastarfox/tree/main/TOOLS/mapdec_src">mapdec/argonautmapdecoder</a> </h2>
+						<p>
+							A program that can read .MAP linker address files generated by the ArgAsm-Super FX (ArgSfx) assembler by Argonaut Software 
+							and output a file containing all of the symbols in a human-readable format.<br>
+							Originally written after migrating UltraStarFox/Star Fox EX from SASM to ArgSfx so we could take advantage of the more detailed symbol output for debugging.<br>
+						</p>
+						Work I did for this tool:
+						<ul>
+							<li>
+								Reverse engineering - figuring out the symbol data format
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/ultrastarfox/tree/main/TOOLS/extend_src">extend/ROM Extender</a> </h2>
+						<p>
+							A program that extends a Super NES ROM image to a certain size in megabits, and fills the empty space with a specified padding byte.
+						</p>
+						Work I did for this tool:
+						<ul>
+							<li>
+								Programming
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>[PC] <a href="https://github.com/Sunlitspace542/ultrastarfox/tree/main/TOOLS/palconv_src">palconv</a> </h2>
+						<p>
+							A program that can convert SNES palette files between .PAL (raw CGRAM) and Nintendo's .COL and .SCL formats.
+						</p>
+						Work I did for this tool:
+						<ul>
+							<li>
+								Reverse engineering - figuring out the data format
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+				</div>
+			</div>
+			<!-- Footer -->
+			<div class="center">
+				<footer>
+					<p>
+						&copy; Sunlit 2023 - 2025<br>
+						All products/trademarks/copyrights cited are the property of their respective owners.<br>
+					</p>
+					<table style="all: unset;">
+						<tr style="all: unset;">
+							<td style="all: unset;">
+								<a href="https://www.mozilla.org/en-US/firefox/new/"><img src="img/buttons/getfirefox.gif" alt=""></a>
+							</td>
+							<td style="all: unset;">
+								<a href="https://rhpz.org/499"><img src="img/buttons/sfexbutton.png" alt=""></a>
+							</td>
+							<td style="all: unset;">
+								<a href="https://rhpz.org"><img src="img/buttons/rhpzbutton.gif" alt=""></a>
+							</td>
+						</tr>
+					</table>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<script src="scripts/imgwindow.js"></script>
+</body>
+</html>
