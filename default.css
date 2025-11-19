@@ -246,4 +246,12 @@ code {
 	margin-right: auto;
 }
 
+/*fancy style for block quotes*/
+blockquote {
+  background-color: #222526;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+}
+
 /* END OF FILE */
