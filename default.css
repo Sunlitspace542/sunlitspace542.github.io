@@ -232,7 +232,7 @@ ul, li {
 }
 
 /*discord style code blocks*/
-code {
+code, pre {
 	background-color: #0D0E1B;
 	padding: 5px;
 	border: 1px solid #3A3A46;
