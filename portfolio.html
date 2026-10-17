@@ -34,6 +34,7 @@ Filename: portfolio.html
 				<div>Works</div>
 				<a href="romhacks.html"><img src="img/sidenav/n64carticon.png" class="sidenavicon"> ROMhacks</a>
 				<a href="portfolio.html"><img src="img/sidenav/portfolioicon.png" class="sidenavicon"> Portfolio</a>
+				<a href="articles.html"><img src="img/sidenav/articlesicon.png" class="sidenavicon"> Articles</a>
 				<div>Art</div>
 				<a href="artwork.html"><img src="img/sidenav/artworkicon.png" class="sidenavicon"> Artwork</a>
 				<div>Donate</div>
@@ -50,8 +51,9 @@ Filename: portfolio.html
 					Disclosure:<br>
 					I often use AI tools to write smaller single purpose tools and/or the basic scaffolding for them, 
 					and I then take that and clean it up and make it actually work.<br>
-					Much of my work on these tools usually goes into figuring out the data formats and/or tying them all together 
+					Much of my work on these tools usually goes into reverse engineering data formats and/or tying it all together 
 					if they are to be used as script components.<br>
+					Please see my <a href="articles/on_ai.html">statement on AI usage</a> for more information.
 					<br>
 				</p>
 				
@@ -81,18 +83,15 @@ Filename: portfolio.html
 							A Blender plugin for importing/exporting and editing shapes (models) for use in Star Fox 1 and 2.<br>
 							<br>
 							This tool was intended to act as my own replacement for Euclidium98's Model to FX, which I felt was very clunky and had room for improvement. 
-							I ended up with something that saves quite a bit of time in the modelling process, and it is now being actively used in Star Fox CD and Star Fox EX.<br>
-							It's still not completely independent, as for most uses it still depends on Argonaut Software's own SHAPED model editor/converter tool to 
-							prepare the exported data for use in game.<br>
+							I ended up with something that saves quite a bit of time in the modelling process, and it is now being actively used in Star Fox CD and Star Fox Next Gen.<br>
 							<br>
 							I spent several weeks reverse engineering the various formats it now supports:<br>
 							<ul>
 								<li>
-									ASM BSP - text format used in Star Fox 1/2 to define shapes, FastFX can export to this format, though it does not support animation export or generating BSP trees for face sorting.
+									ASM BSP - text format used in Star Fox 1/2 to define shapes, FastFX can export to this format using an integrated reimplementation of SHAPED's model compiler as a Python library.
 								</li>
 								<li>
-									ASM GZS - similar to above, but face sorting is much worse and BSP trees are not used. Animation export for this format is not supported.
-								</li>
+									ASM GZS - similar to above, but face sorting is much worse and BSP trees are not used.
 								<li>
 									Fundoshi-Kun - Slightly modified version of the <a href="https://paulbourke.net/dataformats/geo/">Videoscape 3DG1 (GEO)</a> format.
 								</li>
@@ -127,7 +126,7 @@ Filename: portfolio.html
 									Programming - writing TMLanguage files for syntax highlighting
 								</li>
 								<li>
-									Documentation - filling in missing Super FX instruction information
+									Documentation - filling in missing Super FX instruction information, correcting errors
 								</li>
 							</ul>
 						</p>
